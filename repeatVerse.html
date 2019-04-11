@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <div id="player"></div>
     <p></p>
     The button below should start the Song at the right spot, but also replay the song from this spot.<p></p>
@@ -9,18 +8,14 @@
     <button onClick="javascript:stop()" style="font-size: 20px">Stop</button>
     <button onClick="javascript:restart()" style="font-size: 20px">Replay Verse</button>
     <script>
-      // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
 
       tag.src = "https://www.youtube.com/iframe_api";
       var firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
       var player;
-      var startSeconds = 47;  // set your own video start time when loop play
-      var endSeconds = 81;   // set your own video end time when loop play
+      var startSeconds = 47;  
+      var endSeconds = 81;  
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
           height: '390',
